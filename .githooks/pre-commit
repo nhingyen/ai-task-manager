@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "==> Running pre-commit checks..."
+
+bash scripts/check-fast.sh
