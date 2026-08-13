@@ -22,9 +22,12 @@ lib/
 ```
 
 Feature code may depend inward from presentation to domain and from data to
-domain. Domain must not depend on Flutter, persistence, serialization, or
-another feature's data layer. Shared code belongs in `core/` only when it is
-truly used across features and has no feature ownership.
+domain. A feature may depend on another feature's domain model or domain
+interface only when that dependency is necessary. Features must never import
+another feature's presentation or data layer. Domain must not depend on
+Flutter, persistence, or serialization. Do not move a feature-owned domain
+model into `core/` merely to make sharing easier. Shared code belongs in
+`core/` only when it is truly feature-neutral.
 
 ## Business logic and dependency injection
 
