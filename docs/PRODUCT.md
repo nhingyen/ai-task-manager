@@ -45,16 +45,32 @@ The task concept should remain intentionally small. The MVP needs enough task
 information to identify and manage an item, but does not require projects,
 collaboration, scheduling, or prioritization systems.
 
+### Task fields
+
+Each MVP task contains only these fields:
+
+- `id`: a unique identifier;
+- `title`: required task text;
+- `description`: optional additional detail;
+- `isCompleted`: whether the task is complete; and
+- `createdAt`: the task creation timestamp.
+
+The MVP does not add due dates, priorities, tags, subtasks, or other task
+fields.
+
 ## Core features
 
 ### Task list
 
 Users can see their tasks in a clear list and distinguish completed tasks from
-incomplete tasks.
+incomplete tasks. Tasks are displayed by `createdAt` descending, with the
+newest task first.
 
 ### Task creation and editing
 
 Users can add a task and revise it later when its wording or details change.
+The title must not be empty or contain only whitespace; invalid task titles
+are rejected.
 
 ### Completion
 
@@ -63,7 +79,7 @@ reversible.
 
 ### Deletion
 
-Users can remove a task they no longer need.
+Users can remove a task they no longer need after confirming the deletion.
 
 ### Status filtering
 
