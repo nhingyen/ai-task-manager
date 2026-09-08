@@ -1,5 +1,5 @@
 class Task {
-  const Task._({
+  Task({
     required this.id,
     required this.title,
     required this.description,
@@ -15,7 +15,7 @@ class Task {
   }) {
     _validateTitle(title);
 
-    return Task._(
+    return Task(
       id: id,
       title: title,
       description: description,
@@ -33,7 +33,7 @@ class Task {
   Task updateTitle(String title) {
     _validateTitle(title);
 
-    return Task._(
+    return Task(
       id: id,
       title: title,
       description: description,
@@ -43,7 +43,7 @@ class Task {
   }
 
   Task updateDescription(String? description) {
-    return Task._(
+    return Task(
       id: id,
       title: title,
       description: description,
@@ -53,7 +53,7 @@ class Task {
   }
 
   Task toggleCompletion() {
-    return Task._(
+    return Task(
       id: id,
       title: title,
       description: description,
